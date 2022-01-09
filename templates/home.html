@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title>Current Trends in Medical Publications</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('/static/cloud.png');
+  background-repeat: no-repeat;
+  min-height: 100%;
+  background-position: center;
+  background-size: 100% auto;
+}
+</style>
+<body>
+ 
+ <div style= "font-size: 2vw; margin-top: 1vh; color:black; font-weight: bold; z-index: 4" class="w3-display-topmiddle">
+    Current Trends in Medical Publications
+</div>
+ 
+<div style= "color:black; margin-top: 7vh; font-size: 1vw; z-index: 10" class="w3-display-topmiddle" >
+	Commonly used words in the titles of the top 100 trending articles on <a style= "color:black" href="https://pubmed.ncbi.nlm.nih.gov/trending/" target="_blank">PubMed.gov.</a>
+</div>
+
+<div class="w3-display-topmiddle" style= "margin-top: 11vh; font-size: 1vw; z-index: 3;">
+	<form action = '/generateWordcloud' method = 'POST'>
+	<button type="submit" >Generate Wordcloud (May take ~20 secs)</button>
+	</form>
+</div>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+</div>
+
+<div style= "font-size: 1vw; margin-bottom: 2vh; color:black; font-weight: bold;" class="w3-display-bottommiddle">
+    Made by Nirnay Sadaphal, Github link: <a style= "color:black" href="https://github.com/nirsad" target="_blank">github.com/nirsad</a>
+</div>
+
+<div class="w3-display-bottommiddle" style= "font-size: 1vw; margin-bottom: 10vh; z-index: 3;">
+
+<form action = '/feedbacksubmitted' method = 'POST'>
+	<input type="text" placeholder="Feedback?" name= 'Feedback' />
+	<input type="Submit" value = 'Submit'/>
+</form>
+
+</div>
+
+</body>
+</html>
