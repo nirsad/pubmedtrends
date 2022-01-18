@@ -34,14 +34,13 @@ def wordcloud():
 
 #writing feedback
 
-feedbackfile = open('./feedback.txt', 'w+')
-
 @app.route("/feedbacksubmitted", methods = ['POST', 'GET'])
 def feedback():
 	output = request.form.to_dict()
 	if (output['Feedback']):
-		print(output['Feedback'])
-		feedbackfile.writelines(output['Feedback'])
+		with open('./feedback.txt', 'a') as feedbackfile:
+			print(output['Feedback'])
+			feedbackfile.writelines(output['Feedback'] + '\n')
 		return render_template("feedbacksubmit.html")
 	else:
 		return render_template("home.html")
