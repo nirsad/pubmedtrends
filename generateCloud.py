@@ -29,3 +29,4 @@ def makeImage(text):
 tifile = open('words.txt', 'r')
 text = tifile.read()
 makeImage(getFrequencyDictForText(text))
+tifile.close()
