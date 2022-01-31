@@ -10,3 +10,6 @@ pubmedtrends.com is a website succinctly describing the trends in medical litera
 2. Titles from the trending articles are scraped from the HTML using Beautifulsoup 
 3. Titles are cleaned using regular expressions and converted into a list of words
 4. A word cloud is generated from the list of words and is rendered on the website
+
+Example of a wordcloud:
+![Example cloud](static/cloud.png)
