@@ -11,7 +11,7 @@ pubmedtrends.com is a website succinctly describing the trends in medical litera
 3. Titles are cleaned using regular expressions and converted into a list of words
 4. A word cloud is generated from the list of words and is rendered on the website
 
-''' mermaid
+``` mermaid
 graph LR
     A{<a style='color:blue' href='https://pubmed.ncbi.nlm.nih.gov/trending/'>pubmed.ncbi.nlm.nih.gov/<br>trending/</br></a>} -->|HTML| B[getTitles.py]
     style B stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
@@ -24,7 +24,7 @@ graph LR
     G[User Feedback] -->F
     %%H[User Generates Cloud] -->F-->A
     F -->|User Clicks to Generate Cloud|A
-'''
+```
 
 Example of a wordcloud:
 ![Example cloud](static/cloud.png)
