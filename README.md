@@ -1,5 +1,5 @@
 # Project Description
-pubmedtrends.com is a website succinctly describing the trends in medical literature. A simple word cloud appears on the website that shows the most frequently used words in the top trending articles on PubMed. A user may generate an updated word cloud at any time.
+pubmedtrends.com succinctly describes the trends in medical literature. A simple word cloud appears on the website that shows the most frequently used words in the top trending articles on PubMed. A user may generate an updated word cloud at any time.
 # Instructions to emulate website on local server
 1. Clone this repository
 2. Install and update any dependencies outlined in "server.py"
@@ -27,4 +27,4 @@ graph LR
 ```
 
 Example of a wordcloud:
-![Example cloud](static/cloud.png)
+![Example cloud](static/Mar-03-2022.png)
