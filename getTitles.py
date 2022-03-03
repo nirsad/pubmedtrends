@@ -1,10 +1,10 @@
 #csv file to write to
 
-csvfile = open('article_data.csv', 'w+', encoding = 'utf-8')
+csvfile = open(os.path.join(os.getcwd(), '..','article_data.csv'), 'w+', encoding = 'utf-8')
 
 #number of trending pages to webscrape
 
-pages = 10
+pages = 100
 
 titles = []
 authors = []
@@ -12,7 +12,7 @@ journals = []
 
 for i in range(1,pages + 1,1):
 
-    time.sleep(0.2)
+    time.sleep(5)
 	
     link = 'https://pubmed.ncbi.nlm.nih.gov/trending/?page=' + str(i)
 

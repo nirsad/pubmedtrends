@@ -1,6 +1,6 @@
 #read csv file
 
-article_data = pd.read_csv('article_data.csv', encoding = 'utf-8')
+article_data = pd.read_csv(os.path.join(os.getcwd(), '..','article_data.csv'), encoding = 'utf-8')
 
 words2lists = []
 words1list = []
@@ -24,7 +24,7 @@ for x in words2lists:
 
 for index, word in enumerate(words1list):
     #convert to lowercase
-	lowercaseword = word.lower()
+    lowercaseword = word.lower()
 	#remove special characters other than hyphens (-) and periods (.)
     charrw1 = re.sub('[^0-9a-zA-Z-\.]', '', lowercaseword)
 	#remover periods (.) at the ends of words
@@ -32,7 +32,7 @@ for index, word in enumerate(words1list):
     words1list[index] = charrw2
 	#remove words with only special characters and numbers
     if (re.match('[^a-zA-Z]', charrw2)):
-            words1list[index] = ''
+        words1list[index] = ''
 
 #remove empty strings
 
@@ -43,7 +43,7 @@ for word in words1list:
 
 #write all words to a text file
 
-wordsfile = open('words.txt', 'w+')
+wordsfile = open(os.path.join(os.getcwd(), '..','words.txt'), 'w+')
 
 for word in words1list:
     wordsfile.write(word + ' ')

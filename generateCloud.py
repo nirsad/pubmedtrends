@@ -5,7 +5,7 @@ def getFrequencyDictForText(sentence):
     # making dictionary for counting word frequencies
     for text in sentence.split(" "):
         # remove irrelevant words
-		if re.match("a|the|an|the|to|in|for|of|or|by|with|is|on|that|but|from|than|be", text):
+        if re.match("a|the|an|the|to|in|for|of|or|by|with|is|on|that|but|from|than|be", text):
             continue
         val = tmpDict.get(text, 0)
         tmpDict[text.lower()] = val + 1
@@ -22,11 +22,14 @@ def makeImage(text):
     # save
     plt.imshow(wc)
     plt.axis("off")
-    plt.savefig('./static/cloud.png', dpi = 400)
+    datestring = date.today().strftime("%b-%d-%Y")
+    plt.text(860, -50, 'Date Generated: ' + datestring)
+    filename = datestring + '.png'
+    plt.savefig(os.path.join(os.getcwd(), '..', './static', filename), dpi = 400, bbox_inches='tight')
 
 # get text from existing word file
 
-tifile = open('words.txt', 'r')
+tifile = open(os.path.join(os.getcwd(), '..','words.txt'), 'r')
 text = tifile.read()
 makeImage(getFrequencyDictForText(text))
 tifile.close()
