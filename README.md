@@ -5,7 +5,6 @@ pubmedtrends.com succinctly describes the trends in medical literature. A simple
 2. Titles from the trending articles are scraped from the HTML using Beautifulsoup 
 3. Titles are cleaned using regular expressions and converted into a list of words
 4. A word cloud is generated from the list of words and is rendered on the website
-
 ``` mermaid
 graph LR
     A{<a style='color:blue' href='https://pubmedtrends.com/'>pubmedtrends.com <br> server </br></a>} -->|Run Weekly| B>Airflow Scheduler]
@@ -26,6 +25,5 @@ graph LR
     F --> I
     I --> J[(MongoDB <br>Data</br>Grows<br>Weekly</br.)]
 ```
-
 # Example of a wordcloud:
 ![Example cloud](static/Mar-03-2022.png)
