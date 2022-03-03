@@ -13,18 +13,24 @@ pubmedtrends.com succinctly describes the trends in medical literature. A simple
 
 ``` mermaid
 graph LR
-    A{<a style='color:blue' href='https://pubmed.ncbi.nlm.nih.gov/trending/'>pubmed.ncbi.nlm.nih.gov/<br>trending/</br></a>} -->|HTML| B[getTitles.py]
-    style B stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
-    B --> |Titles|C[(Article Data<br>.CSV</br>)]
-    C -->D[dataCleaning.py]
+    A{<a style='color:blue' href='https://pubmedtrends.com/'>pubmedtrends.com <br> server </br></a>} -->|Run Weekly| B>Airflow Scheduler]
+    style B stroke:#f90,stroke-width:2px
+    B --> |Task 1|D[getTitles.py]
     style D stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
-    D -->|Words| E[generateCloud.py]
-    style E stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
-    E -->|Cloud|F{<a style='color:blue' href='https://pubmedtrends.com/'>pubmedtrends</a>}
-    G[User Feedback] -->F
-    %%H[User Generates Cloud] -->F-->A
-    F -->|User Clicks to Generate Cloud|A
+    D --> E{<a style='color:blue' href='https://pubmed.ncbi.nlm.nih.gov/trending/'>pubmed.ncbi.nlm.nih.gov/<br>trending/</br></a>}
+    E --> F[\Article Data<br>.CSV</br>/]
+    F --> G
+    B --> |Task 2|G[dataCleaning.py]
+    B --> |Task 3|H
+    style G stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
+    G --> H[generateCloud.py]
+    style H stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
+    H --> |Return Cloud to Frontend|A
+    B --> |Task 4|I[mongoingest.py]
+    style I stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
+    F --> I
+    I --> J[(MongoDB <br>Data</br>Grows<br>Weekly</br.)]
 ```
 
-Example of a wordcloud:
+# Example of a wordcloud:
 ![Example cloud](static/Mar-03-2022.png)
