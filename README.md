@@ -1,14 +1,15 @@
 
 # Table of Contents 
-1. [Introduction and Project Description](README.md#Introduction and Project Description)
-2. [Example Visualization](README.md#Example Visualization)
-3. [Data Pipeline and Tools Used](README.md#Data Pipeline and Tools Used)
+1. [Introduction and Project Description](README.md#Introduction%20and%20Project%20Description)
+2. [Example Visualization](README.md#Example%20Visualization)
+3. [Data Pipeline and Tools Used](README.md#Data%20Pipeline%20and%20Tools%20Used)
 # Introduction and Project Description
 pubmedtrends.com succinctly describes the trends in medical literature. A simple word cloud appears on the website that shows the most frequently used words in the top trending articles on PubMed. A new cloud is automatically generated and posted every week. This project incorporates various aspects of the data lifecycle including data ETL, analysis, visualization, and project deployment.
 # Example Visualization:
 ![Example cloud](static/Mar-03-2022.png)
 # Data Pipeline and Tools Used
 **General Overview**
+
 This project 
 
 1. HTML is taken from PubMed's trending webpages using the Python requests library
