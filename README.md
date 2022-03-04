@@ -4,8 +4,8 @@
 2. [Example Visualization](README.md#Example%20Visualization)
 3. [Data Pipeline and Tools Used](README.md#Data%20Pipeline%20and%20Tools%20Used)
 # Introduction and Project Description
-- pubmedtrends.com succinctly describes the trends in medical literature. 
-- A word cloud on the website ranks the most frequently used words in the top 1000 trending articles on PubMed. 
+- [pubmedtrends.com](https://pubmedtrends.com/) succinctly describes the trends in medical literature. 
+- A word cloud on the website ranks the most frequently used words in the top 1000 trending articles on [PubMed.gov](pubmed.ncbi.nlm.nih.gov/trending/). 
 - A new cloud is automatically generated and posted to the website every week.
 - Users can look through past clouds to view how the trends have shifted over time. 
 - This project incorporates various aspects of the data lifecycle including data ETL, analysis, visualization, and project deployment.
