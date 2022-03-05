@@ -1,8 +1,9 @@
 
 # Table of Contents 
-1. [Introduction and Project Description](README.md#Introduction%20and%20Project%20Description)
-2. [Example Visualization](README.md#Example%20Visualization)
-3. [Data Pipeline and Tools Used](README.md#Data%20Pipeline%20and%20Tools%20Used)
+1. [Introduction and Project Description](#Introduction%20and%20Project%20Description)
+2. [Example Visualization](#Example%20Visualization)
+3. [Data Pipeline and Tools Used](#Data%20Pipeline%20and%20Tools%20Used)
+4. [Development Process](
 # Introduction and Project Description
 - [pubmedtrends.com](https://pubmedtrends.com/) succinctly describes the trends in medical literature. 
 - A word cloud on the website ranks the most frequently used words in the top 1000 trending articles on [PubMed.gov](pubmed.ncbi.nlm.nih.gov/trending/). 
@@ -12,16 +13,25 @@
 # Example Visualization:
 ![Example cloud](static/Mar-03-2022.png)
 # Data Pipeline and Tools Used
-**General Overview**
+**Overview**
+This project's data pipeline involves several steps:
 
-This project 
+1. An Apache Airflow DAG is set to run weekly with each individial task being a single-threaded python script.
+2. Task 1 is a webscraper that returns HTML from [PubMed's](pubmed.ncbi.nlm.nih.gov/trending/) first 100 trending webpages using the Python requests library. The HTML files are parsed using beatifulsoup and information about each trending article's title, authors, and journal citations are written to a csv file.
 
-1. HTML is taken from PubMed's trending webpages using the Python requests library
-2. Titles from the trending articles are scraped from the HTML using Beautifulsoup 
-3. Titles are cleaned using regular expressions and converted into a list of words
-4. A word cloud is generated from the list of words and is rendered on the website
+**Example Scraped Data**
+| Title                  | Authors                  | Journal/Citation            |
+|-----------------------:|-------------------------:|----------------------------:|
+| Ribosome accumulation during early phase resistance training in humans. | Hammarström D, Øfsteng SJ, Jacobsen NB, Flobergseter KB, Rønnestad BR, Ellefsen S.                      | 94%                         |
+| Phosphate, pyrophosphate, and vascular calcification: a question of balance.  | Villa-Bellosta R, Egido J. | 76%                         |     
+| Mucosal fungi promote gut barrier function and social behavior via Type 17 immunity.| Leonardi I, Gao IH, Lin WY, Allen M, Li XV, Fiers WD, De Celie MB, Putzel GG, Yantiss RK, Johncilla M, Colak D, Iliev ID.  | 57%                         |
+| ...                    |...                       | ...                         |
 
-**Below is a Mermaid diagram of the pipeline**
+4. Task 2 takes the scraped titles and 
+5. Titles are cleaned using regular expressions and converted into a list of words
+6. A word cloud is generated from the list of words and is rendered on the website
+
+**A Mermaid diagram of the pipeline is shown below:**
 ``` mermaid
 graph LR
     A{<a style='color:blue' href='https://pubmedtrends.com/'>pubmedtrends.com <br> server </br></a>} -->|Run Weekly| B>Airflow Scheduler]
@@ -42,3 +52,5 @@ graph LR
     F --> I
     I --> J[(MongoDB <br>Data</br>Grows<br>Weekly</br.)]
 ```
+# Development Process
+
