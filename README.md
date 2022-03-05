@@ -1,9 +1,9 @@
 
 # Table of Contents 
-1. [Introduction and Project Description](#Introduction%20and%20Project%20Description)
-2. [Example Visualization](#Example%20Visualization)
-3. [Data Pipeline and Tools Used](#Data%20Pipeline%20and%20Tools%20Used)
-4. [Deployment Process](#Deployment%20Process)
+1. [Introduction and Project Description](https://github.com/nirsad/pubmedtrends#introduction-and-project-description)
+2. [Example Visualization](https://github.com/nirsad/pubmedtrends#example-visualization)
+3. [Data Pipeline and Tools Used](https://github.com/nirsad/pubmedtrends#data-pipeline-and-tools-used)
+4. [Deployment Process](https://github.com/nirsad/pubmedtrends#deployment-process)
 # Introduction and Project Description
 - [pubmedtrends.com](https://pubmedtrends.com/) succinctly describes the trends in medical literature. 
 - A word cloud on the website ranks the most frequently used words in the top 1000 trending articles on [PubMed.gov](https://pubmed.ncbi.nlm.nih.gov/trending/). 
