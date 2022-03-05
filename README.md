@@ -15,7 +15,7 @@
 # Data Pipeline and Tools Used
 This project's data pipeline involves several steps:
 
-###### Step 1
+#### Step 1
 
 An Apache Airflow DAG is set to run weekly with each individial task being a single-threaded python script.
 
