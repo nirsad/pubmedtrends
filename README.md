@@ -19,7 +19,7 @@ This project's data pipeline involves several steps:
 
 An Apache Airflow DAG is set to run weekly with each individial task being a single-threaded python script.
 
---**Step 2**
+### Step 2
 
 A webscraper returns HTML from [PubMed's](https://pubmed.ncbi.nlm.nih.gov/trending/) first 100 trending webpages using the Python requests library. The HTML files are parsed using beatifulsoup and information about each trending article's title, authors, and journal citations are written to a csv file.
 
@@ -31,15 +31,15 @@ A webscraper returns HTML from [PubMed's](https://pubmed.ncbi.nlm.nih.gov/trendi
 |Mucosal fungi promote gut barrier function and social behavior via Type 17 immunity.|Leonardi I, Gao IH, Lin WY, Allen M, Li XV, Fiers WD, De Celie MB, Putzel GG, Yantiss RK, Johncilla M, Colak D, Iliev ID.|Cell. 2022 Feb 16:S0092-8674(22)00075-7. doi: 10.1016/j.cell.2022.01.017. Online ahead of print.|
 | Continued...                    |Continued...                       |Continued...                         |
 
---**Step 3**
+### Step 3
 
 The scraped titles are seperated into individual words and are then cleaned using regular expressions. This step insures that the words are not exclusively numeric and any  extraneous special characters are removed.
 
---**Step 4**
+### Step 4
 
 A word cloud is generated using the cleaned words and a date of creation is posted above the cloud for user reference.
 
---**Step 5**
+### Step 5
 
 The scraped article data is loaded into MongoDB to build a dataset that may be used in the future for analysis. A new MongoDB collection is created for each date the pipeline is run.
 
