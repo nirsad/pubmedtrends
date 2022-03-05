@@ -21,11 +21,11 @@ This project's data pipeline involves several steps:
 
 **Example Scraped Data**
 | Title                  | Authors                  | Journal/Citation            |
-|-----------------------:|-------------------------:|----------------------------:|
-| Ribosome accumulation during early phase resistance training in humans. | Hammarström D, Øfsteng SJ, Jacobsen NB, Flobergseter KB, Rønnestad BR, Ellefsen S.                      | 94%                         |
-| Phosphate, pyrophosphate, and vascular calcification: a question of balance.  | Villa-Bellosta R, Egido J. | 76%                         |     
-| Mucosal fungi promote gut barrier function and social behavior via Type 17 immunity.| Leonardi I, Gao IH, Lin WY, Allen M, Li XV, Fiers WD, De Celie MB, Putzel GG, Yantiss RK, Johncilla M, Colak D, Iliev ID.  | 57%                         |
-| ...                    |...                       | ...                         |
+|:-----------------------|:-------------------------|:----------------------------|
+|Ribosome accumulation during early phase resistance training in humans.|Hammarström D, Øfsteng SJ, Jacobsen NB, Flobergseter KB, Rønnestad BR, Ellefsen S.|Acta Physiol (Oxf). 2022 Feb 25:e13806. doi: 10.1111/apha.13806. Online ahead of print.|
+|Phosphate, pyrophosphate, and vascular calcification: a question of balance.|Villa-Bellosta R, Egido J.|Eur Heart J. 2017 Jun 14;38(23):1801-1804. doi: 10.1093/eurheartj/ehv605.|     
+|Mucosal fungi promote gut barrier function and social behavior via Type 17 immunity.|Leonardi I, Gao IH, Lin WY, Allen M, Li XV, Fiers WD, De Celie MB, Putzel GG, Yantiss RK, Johncilla M, Colak D, Iliev ID.|Cell. 2022 Feb 16:S0092-8674(22)00075-7. doi: 10.1016/j.cell.2022.01.017. Online ahead of print.|
+| Continued...                    |Continued...                       |Continued...                         |
 
 4. Task 2 takes the scraped titles and 
 5. Titles are cleaned using regular expressions and converted into a list of words
