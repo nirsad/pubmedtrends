@@ -25,6 +25,7 @@ A webscraper returns HTML from [PubMed's](https://pubmed.ncbi.nlm.nih.gov/trendi
 |Phosphate, pyrophosphate, and vascular calcification: a question of balance.|Villa-Bellosta R, Egido J.|Eur Heart J. 2017 Jun 14;38(23):1801-1804. doi: 10.1093/eurheartj/ehv605.|     
 |Mucosal fungi promote gut barrier function and social behavior via Type 17 immunity.|Leonardi I, Gao IH, Lin WY, Allen M, Li XV, Fiers WD, De Celie MB, Putzel GG, Yantiss RK, Johncilla M, Colak D, Iliev ID.|Cell. 2022 Feb 16:S0092-8674(22)00075-7. doi: 10.1016/j.cell.2022.01.017. Online ahead of print.|
 | Continued...                    |Continued...                       |Continued...                         |
+
 **Step 3**
 The scraped titles are seperated into individual words and are then cleaned using regular expressions. This step insures that the words are not exclusively numeric and any  extraneous special characters are removed.
 **Step 4**
