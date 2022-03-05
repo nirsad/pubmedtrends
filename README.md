@@ -43,7 +43,7 @@ A word cloud is generated using the cleaned words and a date of creation is post
 
 The scraped article data is loaded into MongoDB to build a dataset that may be used in the future for analysis. A new MongoDB collection is created for each date the pipeline is run.
 
-**A Mermaid diagram of the pipeline is shown below:**
+## A Mermaid diagram of the pipeline is shown below:
 ``` mermaid
 graph LR
     A{<a style='color:blue' href='https://pubmedtrends.com/'>pubmedtrends.com <br> server </br></a>} -->|Run Weekly| B>Airflow Scheduler]
