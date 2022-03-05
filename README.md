@@ -14,10 +14,15 @@
 ![Example cloud](static/Mar-03-2022.png)
 # Data Pipeline and Tools Used
 This project's data pipeline involves several steps:
+
 **Step 1**
+
 An Apache Airflow DAG is set to run weekly with each individial task being a single-threaded python script.
+
 **Step 2**
+
 A webscraper returns HTML from [PubMed's](https://pubmed.ncbi.nlm.nih.gov/trending/) first 100 trending webpages using the Python requests library. The HTML files are parsed using beatifulsoup and information about each trending article's title, authors, and journal citations are written to a csv file.
+
 **Example Scraped Data**
 | Title                  | Authors                  | Journal/Citation            |
 |:-----------------------|:-------------------------|:----------------------------|
@@ -27,10 +32,15 @@ A webscraper returns HTML from [PubMed's](https://pubmed.ncbi.nlm.nih.gov/trendi
 | Continued...                    |Continued...                       |Continued...                         |
 
 **Step 3**
+
 The scraped titles are seperated into individual words and are then cleaned using regular expressions. This step insures that the words are not exclusively numeric and any  extraneous special characters are removed.
+
 **Step 4**
+
 A word cloud is generated using the cleaned words and a date of creation is posted above the cloud for user reference.
+
 **Step 5**
+
 The scraped article data is loaded into MongoDB to build a dataset that may be used in the future for analysis. A new MongoDB collection is created for each date the pipeline is run.
 
 **A Mermaid diagram of the pipeline is shown below:**
