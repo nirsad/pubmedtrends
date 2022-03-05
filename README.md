@@ -48,18 +48,18 @@ The scraped article data is loaded into MongoDB to build a dataset that may be u
 graph LR
     A{<a style='color:blue' href='https://pubmedtrends.com/'>pubmedtrends.com <br> server </br></a>} -->|Run Weekly| B>Airflow Scheduler]
     style B stroke:#f90,stroke-width:2px
-    B --> |Task 1|D[getTitles.py]
+    B --> |Step 2|D[getTitles.py]
     style D stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
     D --> E{<a style='color:blue' href='https://pubmed.ncbi.nlm.nih.gov/trending/'>pubmed.ncbi.nlm.nih.gov/<br>trending/</br></a>}
     E --> F[\Article Data<br>.CSV</br>/]
     F --> G
-    B --> |Task 2|G[dataCleaning.py]
-    B --> |Task 3|H
+    B --> |Step 3|G[dataCleaning.py]
+    B --> |Step 4|H
     style G stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
     G --> H[generateCloud.py]
     style H stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
     H --> |Return Cloud to Frontend|A
-    B --> |Task 4|I[mongoingest.py]
+    B --> |Step 5|I[mongoingest.py]
     style I stroke:#f66,stroke-width:2px,stroke-dasharray: 5 5
     F --> I
     I --> J[(MongoDB <br>Data</br>Grows<br>Weekly</br.)]
