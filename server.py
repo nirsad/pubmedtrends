@@ -61,7 +61,6 @@ def changedates():
 				img = return_wordcloud_image(session)
 	else:
 		img = return_wordcloud_image(session)
-	
 	return render_template("home.html", img_path = img)
 
 #writing feedback
